@@ -1,0 +1,152 @@
+.carousel-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.custom-carousel .carousel-item {
+  text-align: center;
+  height: 600px; /* Fixed height for consistency */
+}
+
+.image-wrapper {
+  position: relative;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: 1;
+}
+
+.carousel-caption-wrapper {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: white;
+  text-align: left;
+  z-index: 2;
+  max-width: 90%;
+}
+
+.caption-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.caption-content {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.carousel-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.carousel-fraction {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.progress-bar-container {
+  flex-grow: 1;
+  height: 6px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.4s ease-in-out;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.play-pause-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.carousel-control-icon {
+  font-size: 2rem;
+  color: white;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .custom-carousel .carousel-item {
+    height: 400px;
+  }
+
+  .caption-title {
+    font-size: 1.5rem;
+  }
+
+  .caption-content {
+    font-size: 0.95rem;
+  }
+
+  .carousel-caption-wrapper {
+    left: 2%;
+    bottom: 5%;
+  }
+
+  .carousel-container {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-carousel .carousel-item {
+    height: 300px;
+  }
+
+  .caption-title {
+    font-size: 1.2rem;
+  }
+
+  .caption-content {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,31 @@
+.food-screen {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.food-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.food-header {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin: 20px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .food-main {
+    padding: 10px;
+  }
+
+  .food-header {
+    font-size: 24px;
+  }
+}

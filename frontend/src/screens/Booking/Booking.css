@@ -1,0 +1,117 @@
+.booking-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background: #f8fafc;
+}
+
+.booking-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+}
+
+.booking-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f1f5f9;
+  text-align: center;
+}
+
+.booking-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.booking-status {
+  margin-top: 0.5rem;
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 0.875rem;
+}
+
+.booking-body {
+  padding: 1.5rem;
+}
+
+.booking-image {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.booking-image img {
+  width: 200px;
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .details-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.detail-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.price-summary {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.detail-item.total {
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.payment-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.payment-button {
+  background: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.payment-button:hover {
+  background: #2563eb;
+}
+
+.payment-button .amount {
+  font-weight: bold;
+}

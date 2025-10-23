@@ -1,0 +1,168 @@
+.place-card {
+  display: flex;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-5px);
+}
+
+.place-image-container {
+  flex: 0 0 33.333%;
+  padding-right: 1.5rem;
+}
+
+.place-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.place-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.place-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.place-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.place-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.place-info {
+  margin-bottom: 1.5rem;
+}
+
+.place-info p {
+  margin: 0.5rem 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.place-info span {
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.place-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.action-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.view-details {
+  margin-left: auto;
+}
+
+.place-modal .modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modal-title {
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.place-carousel {
+  margin-bottom: 1.5rem;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.place-description {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .place-card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .place-image-container {
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+
+  .place-thumbnail {
+    height: 200px;
+  }
+
+  .place-title {
+    font-size: 1.5rem;
+  }
+
+  .place-actions {
+    flex-wrap: wrap;
+  }
+
+  .action-button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .carousel-image {
+    height: 300px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.place-card {
+  animation: fadeIn 0.5s ease-out;
+}

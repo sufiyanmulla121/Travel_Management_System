@@ -1,0 +1,103 @@
+.location-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  background: #ccc;
+}
+
+.location-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.location-image:hover {
+  transform: scale(1.05);
+}
+
+.location-content {
+  padding: 1.2rem;
+}
+
+.location-title {
+  font-size: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.location-reviews,
+.location-phone,
+.location-rent,
+.location-type,
+.location-description {
+  margin: 0.3rem 0;
+  line-height: 1.4;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: justify;
+}
+
+.location-reviews strong,
+.location-phone strong,
+.location-rent strong,
+.location-type strong {
+  font-weight: 600;
+}
+
+.booking-button {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .location-card {
+    max-width: 90%;
+    margin: 1rem auto;
+  }
+
+  .image-wrapper {
+    height: 180px;
+  }
+
+  .location-title {
+    font-size: 1.1rem;
+  }
+
+  .booking-button {
+    width: 100%;
+    text-align: center;
+  }
+}

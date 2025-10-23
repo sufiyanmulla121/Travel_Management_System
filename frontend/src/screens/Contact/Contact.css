@@ -1,0 +1,194 @@
+.contact-screen {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 2rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.contact-header h1 {
+  color: #1e293b;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.contact-subtitle span {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.contact-card-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.contact-card-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.error-wrapper {
+  text-align: center;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  background-color: #fef2f2;
+  border-radius: 12px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.retry-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.retry-button:hover {
+  background-color: #b91c1c;
+}
+
+.no-contacts {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.no-contacts i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.no-contacts p {
+  font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-screen {
+    padding: 1.5rem;
+  }
+
+  .contacts-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-screen {
+    padding: 1rem;
+  }
+
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+
+  .contacts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .contact-screen {
+    background-color: #0f172a;
+  }
+
+  .contact-header h1 {
+    color: #f1f5f9;
+  }
+
+  .contact-subtitle {
+    color: #94a3b8;
+  }
+
+  .contact-subtitle span {
+    background-color: #0f172a;
+    color: #38bdf8;
+  }
+
+  .no-contacts {
+    color: #94a3b8;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .contact-subtitle span {
+    border: 1px solid currentColor;
+  }
+
+  .retry-button {
+    border: 2px solid #dc2626;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-screen,
+  .loader-container,
+  .error-wrapper,
+  .contact-card-wrapper {
+    animation: none;
+  }
+
+  .contact-card-wrapper:hover {
+    transform: none;
+  }
+}
+
+@media print {
+  .contact-screen {
+    background: white;
+    padding: 0;
+  }
+
+  .contact-card-wrapper {
+    page-break-inside: avoid;
+  }
+
+  .retry-button {
+    display: none;
+  }
+}
