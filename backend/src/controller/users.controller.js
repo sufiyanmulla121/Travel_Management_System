@@ -27,12 +27,15 @@ export const registerUser = async (req, res) => {
 
     const newUser = await User.create({
       name, email, password: hashedPassword, role: role || "user"
+
     });
 
     return res.status(201).json({
       message: "User registered successfully",
       newUser
     });
+
+
   } catch (error) {
     return res
       .status(500)

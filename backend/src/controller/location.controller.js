@@ -1,11 +1,21 @@
 import Location from "../models/locations.js";
 
+
 export const getLocation = async (req, res) => {
   try {
-    const locations = await Location.find({});
-    res.send(locations);
+    const locations = await Location.findAll(); // fetch all locations
+    return res.status(200).json({
+      success: true,
+      count: locations.length,
+      data: locations,
+    });
   } catch (error) {
-    return res.status(400).json({ error });
+    console.error("Error fetching locations:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Failed to fetch locations",
+      error: error.message,
+    });
   }
 };
 
@@ -20,10 +30,13 @@ export const getAllBooking = async (req, res) => {
 
 export const addLocation = async (req, res) => {
   try {
-    const newlocation = new Location(req.body);
-    await newlocation.save();
-    res.send("New Room Added Successfully !");
+    const newLocation = await Location.create(req.body);
+    res.status(201).json({
+      message: "New Location Added Successfully!",
+      location: newLocation
+    });
   } catch (error) {
-    return res.status(400).json({ error });
+    console.error(error);
+    return res.status(400).json({ error: error.message });
   }
 };

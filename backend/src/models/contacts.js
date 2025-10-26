@@ -1,52 +1,63 @@
-import { Schema, model } from "mongoose";
+import { DataTypes, Model } from "@sequelize/core";
+import sequelize from "../db/index.js";
 
-const contactSchema = Schema(
+class Contact extends Model { }
+
+Contact.init(
   {
     cname: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     clocation: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     cphonenumber: {
-      type: Number,
-      required: true,
+      type: DataTypes.STRING, // store as string (supports +, leading 0s)
+      allowNull: false,
     },
     ctype1: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     ctype2: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    cimageurls: [],
+    cimageurls: {
+      type: DataTypes.JSON, // array of image URLs
+      allowNull: true,
+    },
     cemail: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true,
+      },
     },
     clink1: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     clink2: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     clink3: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     clink4: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
+    sequelize,
+    modelName: "contact",
     timestamps: true,
-  },
+  }
 );
-const Contact = model("contacts", contactSchema);
+
 export default Contact;

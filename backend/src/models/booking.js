@@ -1,50 +1,58 @@
-import { Schema, model } from "mongoose";
+import { DataTypes, Model } from "@sequelize/core";
+import sequelize from "../db/index.js";
 
-const bookingSchema = Schema(
+class Booking extends Model { }
+
+Booking.init(
   {
+    bookingId: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     places: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     placesid: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     userid: {
-      type: String,
-      required: false,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     fromDate: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     toDate: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     totalAmount: {
-      type: Number,
-      required: true,
+      type: DataTypes.FLOAT,
+      allowNull: false,
     },
     totalDays: {
-      type: Number,
-      required: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     transactionId: {
-      type: String,
-      required: true,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     status: {
-      type: String,
-      required: true,
-      default: "booked",
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "booked",
     },
   },
   {
+    sequelize,
+    modelName: "Booking",
     timestamps: true,
-  },
+  }
 );
-
-const Booking = model("bookings", bookingSchema);
 
 export default Booking;
